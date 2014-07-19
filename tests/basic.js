@@ -23,5 +23,16 @@ exports.suite = vows.describe("Basic tests").addBatch({
         "has the correct contents": function (files) {
             assert.equal(files.length,3);
         }
+    },
+    "A set of files previously synced by the rsync task": {
+        topic: function() {
+            fs.readdir("./tmp/exclusive",this.callback);
+        },
+        "is readable": function (error,files) {
+            assert.isNull(error);
+        },
+        "has the correct contents": function (files) {
+            assert.equal(files.length,2);
+        }
     }
 });

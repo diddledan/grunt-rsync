@@ -41,6 +41,17 @@ module.exports = function(grunt) {
                     dest: "./tmp/multiple",
                     recursive: true
                 }
+            },
+            exclusively: {
+                options: {
+                    src: "./tests/fixtures/multiple/",
+                    dest: "./tmp/exclusive",
+                    recursive: true,
+                    copyExclusively: [
+                        "test2.txt",
+                        "test3.txt"
+                    ]
+                }
             }
         },
         vows: {
