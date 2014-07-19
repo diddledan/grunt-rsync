@@ -4,7 +4,7 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release notes
 
-- `0.6.0.1` Added copyExclusively option.
+- `0.6.1` Added copyExclusively option.
 - `0.6.0` Updated to `rsyncwrapper 0.4.0`. 
 - `0.5.0` Updated to `rsyncwrapper 0.3.0`.
 - `0.4.0` Updated to `rsyncwrapper 0.2.0`.
