@@ -4,6 +4,7 @@ A Grunt multitask for accessing the file copying and syncing capabilities of the
 
 ### Release notes
 
+- `0.6.0.1` Added copyExclusively option.
 - `0.6.0` Updated to `rsyncwrapper 0.4.0`. 
 - `0.5.0` Updated to `rsyncwrapper 0.3.0`.
 - `0.4.0` Updated to `rsyncwrapper 0.2.0`.
@@ -71,6 +72,27 @@ Any wildcards expansions and/or exclude patterns and globbing of paths are handl
 For more information on rsync's syntax check the [rsync manpages](http://linux.die.net/man/1/rsync).
 
 For information about how this task's options relate to rsync's functionality check [rsyncwrapper](https://github.com/jedrichards/rsyncwrapper).
+
+### Exclusive Copying
+
+This extended version includes a new feature which allows to copy only files or directories from src if they're explicitly named in the `options.copyExclusively` array:
+
+```javascript
+rsync {
+    exclusive: {
+        options: {
+            src: "./dist",
+            dest: "/var/www/site",
+            copyExclusively: [
+                "file1.txt",
+                "folder3/"
+            ]
+        }
+    }
+}
+```
+
+* Note: I advise to include the trailing slash on folder names in the copyExclusively variable.
 
 ### Testing
 
